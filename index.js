@@ -22,7 +22,7 @@ let previousWord = '';
 
 const wordToGuessEl = document.getElementById('word-to-guess');
 const previousWordEl = document.getElementById('previous-word');
-const incorrectLettersEl = document.getAnimations('incorrect-letters');
+const incorrectLettersEl = document.getElementById('incorrect-letters');
 const remainingGuessesEl = document.getElementById('remaining-guesses');
 const winsEl = document.getElementById('wins');
 const lossesEl = document.getElementById('losses');
@@ -55,7 +55,7 @@ document.addEventListener('keydown', function (event) {
 
     wordToGuessEl.textContent = displayedWord.join('');
 
-    if (displayedWord.includes('_')) {
+    if (!displayedWord.includes('_')) {
       wins++;
       winsEl.textContent = wins;
       previousWord = currentWord;
